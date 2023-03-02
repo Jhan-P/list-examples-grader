@@ -22,19 +22,19 @@ then
     exit 1
 fi
 
-javac -cp ".;..\lib\junit-4.13.2.jar;..\lib\hamcrest-2.2.jar" TestListExamples.java
+javac -cp ".;../lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" TestListExamples.java
 if [ $? -ne 0 ]
 then
     echo "TestListExamples.java gave a compile error"
     exit 1
 fi
 
-java -cp ".;..\lib\junit-4.13.2.jar;..\lib\hamcrest-2.2.jar" org.junit.runner.JUnitCore TestListExamples.java > test-results.txt
+# java -cp ".;../lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore TestListExamples.java > test-results.txt
 
-grep "Failures" test-results.txt > failures.txt
-if [ -s failures.txt ]
-then
-    echo "Failed!!!!!"
-else
-    echo "Passed!"
-fi
+# grep "Failures" test-results.txt > failures.txt
+# if [ -s failures.txt ]
+# then
+#     echo "Failed!!!!!"
+# else
+#     echo "Passed!"
+# fi
